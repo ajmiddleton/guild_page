@@ -5,7 +5,8 @@ angular.module('guild-page',
    'ngResource',
    'ngSanitize',
    'ui.router',
-   'ui.bootstrap'
+   'ui.bootstrap',
+   'restangular'
    ])
 
 angular.module('guild-page')
@@ -20,12 +21,11 @@ angular.module('guild-page')
     $stateProvider
     .state('app', {
       url: '/'
-      templateUrl: 'modules/core/app.html'
-      controller: 'ApplicationCtrl'
+      template: '<ui-view/>'
       abstract: true
     })
-    .state('app.home', {
+    .state('app.index', {
       url: ''
-      templateUrl: 'modules/core/home.html'
-      controller: 'HomeCtrl'
+      templateUrl: 'modules/core/app.html'
+      controller: 'ApplicationCtrl'
     })
